@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #0f172a, #020617);
+  color: white;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: #ef4444;
+  border-bottom: 2px solid #ef4444;
+  padding-bottom: 5px;
+}
+
+nav a:hover {
+  color: white;
+}
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
