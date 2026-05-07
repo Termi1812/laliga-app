@@ -8,6 +8,9 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: bold;
   font-size: 18px;
 }
@@ -19,10 +22,13 @@
 
 .container {
   padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 h1 {
   margin-bottom: 20px;
+  font-size: 22px;
 }
 
 .tabla {
@@ -34,31 +40,65 @@ h1 {
 
 .fila {
   display: grid;
-  grid-template-columns: 50px 1fr 80px;
-  padding: 15px;
+  grid-template-columns: 50px 1fr 60px 60px 60px 60px 60px 60px 70px 70px;
+  padding: 12px 15px;
   align-items: center;
   border-bottom: 1px solid #1e293b;
-}
-
-.header-fila {
-  background: #0f172a;
-  font-weight: bold;
-  color: #94a3b8;
-}
-
-.equipo {
-  text-align: left;
-}
-
-.pts {
-  color: #ef4444;
-  font-weight: bold;
+  border-left: 4px solid transparent;
 }
 
 .fila:hover {
   background: #1e293b;
 }
 
-.top {
-  border-left: 4px solid #22c55e;
+.header-fila {
+  background: #0f172a;
+  font-weight: bold;
+  color: #94a3b8;
+  font-size: 13px;
+  border-left: 4px solid transparent;
+}
+
+.col-pos { text-align: center; }
+.col-equipo { display: flex; align-items: center; gap: 10px; }
+.col-stat { text-align: center; color: #94a3b8; font-size: 14px; }
+.col-pts { text-align: center; color: #ef4444; font-weight: bold; font-size: 15px; }
+
+.escudo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.champions { border-left: 4px solid  #3b82f6; }
+.europa { border-left: 4px solid #fc5000; }
+.conference { border-left: 4px solid #0bf803; }
+.descenso { border-left: 4px solid #ef4444; }
+
+.leyenda {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #94a3b8;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.champions-dot { background: #3b82f6;; }
+.europa-dot { background: #fc5000; }
+.conference-dot { background: #0bf803; }
+.descenso-dot { background: #ef4444; }
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
