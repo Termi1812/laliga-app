@@ -1,0 +1,219 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.season {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.container {
+  padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.tab {
+  padding: 10px 24px;
+  color: #94a3b8;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tab.active {
+  color: #ef4444;
+  border-bottom: 2px solid #ef4444;
+}
+
+.partido-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.partido-card:hover {
+  background: #0f172a;
+}
+
+.equipo-local {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.equipo-visitante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.equipo-nombre {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.escudo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.marcador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 100px;
+}
+
+.hora {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.fecha {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.score-box {
+  display: flex;
+  align-items: center;
+}
+
+.score {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.score-separador {
+  font-size: 18px;
+  color: #94a3b8;
+  margin: 0 6px;
+}
+
+.badge-fin {
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* MOVILES */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header {
+    padding: 12px 16px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .season {
+    display: none;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 13px;
+  }
+
+  .partido-card {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .equipo-nombre {
+    font-size: 13px;
+  }
+
+  .escudo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hora {
+    font-size: 15px;
+  }
+
+  .score {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partido-card {
+    grid-template-columns: 1fr 70px 1fr;
+    padding: 10px 8px;
+    gap: 6px;
+  }
+
+  .equipo-nombre {
+    font-size: 11px;
+  }
+
+  .escudo {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hora {
+    font-size: 13px;
+  }
+
+  .score {
+    font-size: 16px;
+  }
+
+  .marcador {
+    min-width: 70px;
+  }
+}

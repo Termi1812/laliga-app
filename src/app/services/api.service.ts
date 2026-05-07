@@ -13,4 +13,11 @@ export class ApiService {
   getClasificacion(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/clasificacion/tabla`);
   }
+    getPartidos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/partidos/proximos`);
+  }
+
+  getResultados(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/partidos/resultados`);
+  }
 }

@@ -1,0 +1,67 @@
+<div class="app">
+
+  <header class="header">
+    <div class="logo">
+      <img src="logos/laliga.png" class="logo-img"/>
+      <span class="logo-text">LaLiga App</span>
+    </div>
+    <nav>
+      <a routerLink="/clasificacion">Clasificación</a>
+      <a class="active">Partidos</a>
+      <a routerLink="/equipos">Equipos</a>
+    </nav>
+    <div class="season">🏆 Temporada 2025/26</div>
+  </header>
+
+  <main class="container">
+    <h1>PARTIDOS</h1>
+
+    <div class="tabs">
+      <div class="tab" [class.active]="vistaActiva === 'proximos'" (click)="vistaActiva = 'proximos'">Próximos</div>
+      <div class="tab" [class.active]="vistaActiva === 'resultados'" (click)="vistaActiva = 'resultados'">Resultados</div>
+    </div>
+
+    @if (vistaActiva === 'proximos') {
+      @for (partido of proximos; track partido.id) {
+        <div class="partido-card">
+          <div class="equipo-local">
+            <span class="equipo-nombre">{{ partido.equipoLocal.nombre }}</span>
+            <img [src]="partido.equipoLocal.escudo" class="escudo" [alt]="partido.equipoLocal.nombre"/>
+          </div>
+          <div class="marcador">
+            <span class="hora">{{ partido.fecha | date:'HH:mm' }}</span>
+            <span class="fecha">{{ partido.fecha | date:'EEE d MMM' : '' : 'es' }}</span>
+          </div>
+          <div class="equipo-visitante">
+            <img [src]="partido.equipoVisitante.escudo" class="escudo" [alt]="partido.equipoVisitante.nombre"/>
+            <span class="equipo-nombre">{{ partido.equipoVisitante.nombre }}</span>
+          </div>
+        </div>
+      }
+    }
+
+    @if (vistaActiva === 'resultados') {
+      @for (partido of resultados; track partido.id) {
+        <div class="partido-card">
+          <div class="equipo-local">
+            <span class="equipo-nombre">{{ partido.equipoLocal.nombre }}</span>
+            <img [src]="partido.equipoLocal.escudo" class="escudo" [alt]="partido.equipoLocal.nombre"/>
+          </div>
+          <div class="marcador">
+            <div class="score-box">
+              <span class="score">{{ partido.golesLocal }}</span>
+              <span class="score-separador">-</span>
+              <span class="score">{{ partido.golesVisitante }}</span>
+            </div>
+            <span class="badge-fin">FIN</span>
+          </div>
+          <div class="equipo-visitante">
+            <img [src]="partido.equipoVisitante.escudo" class="escudo" [alt]="partido.equipoVisitante.nombre"/>
+            <span class="equipo-nombre">{{ partido.equipoVisitante.nombre }}</span>
+          </div>
+        </div>
+      }
+    }
+
+  </main>
+</div>
