@@ -29,9 +29,9 @@ export class ClasificacionComponent implements OnInit {
   }
 
   getClaseCompeticion(posicion: number): string {
-    if (posicion <= 4) return 'champions';
-    if (posicion <= 6) return 'europa';
-    if (posicion === 7) return 'conference';
+    if (posicion <= 5) return 'champions';
+    if (posicion <= 7) return 'europa';
+    if (posicion === 8) return 'conference';
     if (posicion >= 18) return 'descenso';
     return '';
   }
