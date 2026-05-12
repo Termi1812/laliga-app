@@ -1,0 +1,27 @@
+<div class="app">
+  <header class="header">
+    <div class="logo">
+      <img src="logos/laliga.png" class="logo-img"/>
+      <span class="logo-text">LaLiga App</span>
+    </div>
+    <nav>
+      <a routerLink="/clasificacion">Clasificación</a>
+      <a routerLink="/partidos">Partidos</a>
+      <a class="active">Equipos</a>
+    </nav>
+    <div class="season">🏆 Temporada 2025/26</div>
+  </header>
+
+  <main class="container">
+    <h1>EQUIPOS</h1>
+    <div class="equipos-grid">
+      @for (equipo of equipos; track equipo.id) {
+        <div class="equipo-card" [routerLink]="['/equipos', equipo.id]">
+          <img [src]="equipo.escudo" class="escudo" [alt]="equipo.nombre"/>
+          <span class="nombre">{{ equipo.nombre }}</span>
+          <span class="estadio">{{ equipo.estadio }}</span>
+        </div>
+      }
+    </div>
+  </main>
+</div>

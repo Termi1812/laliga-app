@@ -20,4 +20,18 @@ export class ApiService {
   getResultados(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/partidos/resultados`);
   }
+  getEquipos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/equipos`);
+  }
+  getEquipo(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/equipos/${id}`);
+  }
+
+  getClasificacionEquipo(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/clasificacion/equipo/${id}`);
+  }
+
+  getPartidosEquipo(id: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/partidos/equipo/${id}`);
+  }
 }

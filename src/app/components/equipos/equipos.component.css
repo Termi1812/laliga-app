@@ -1,0 +1,90 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.season {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.container {
+  padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.equipo-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.equipo-card:hover {
+  background: #0f172a;
+  border-color: #ef4444;
+}
+
+.escudo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.nombre {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.estadio {
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 16px; }
+  .header { padding: 12px 16px; }
+  .logo-text { display: none; }
+  .season { display: none; }
+  nav a { margin: 0 8px; font-size: 13px; }
+  .equipos-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+}

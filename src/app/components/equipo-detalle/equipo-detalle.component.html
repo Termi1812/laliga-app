@@ -1,0 +1,92 @@
+<div class="app">
+  <header class="header">
+    <div class="logo">
+      <img src="logos/laliga.png" class="logo-img"/>
+      <span class="logo-text">LaLiga App</span>
+    </div>
+    <nav>
+      <a routerLink="/clasificacion">Clasificación</a>
+      <a routerLink="/partidos">Partidos</a>
+      <a routerLink="/equipos" class="active">Equipos</a>
+    </nav>
+    <div class="season">🏆 Temporada 2025/26</div>
+  </header>
+
+  <main class="container">
+
+    @if (equipo) {
+      <div class="back" routerLink="/equipos">← Volver</div>
+
+      <div class="equipo-header">
+        <img [src]="equipo.escudo" class="escudo-grande" [alt]="equipo.nombre"/>
+        <div class="equipo-info">
+          <h1>{{ equipo.nombre }}</h1>
+          <p class="estadio">🏟️ {{ equipo.estadio }}</p>
+        </div>
+      </div>
+
+      @if (clasificacion) {
+        <div class="seccion">
+          <h2>CLASIFICACIÓN</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-label">Posición</span>
+              <span class="stat-valor">{{ clasificacion.posicion }}º</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Puntos</span>
+              <span class="stat-valor rojo">{{ clasificacion.puntos }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">PJ</span>
+              <span class="stat-valor">{{ clasificacion.partidosJugados }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">PG</span>
+              <span class="stat-valor">{{ clasificacion.partidosGanados }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">PE</span>
+              <span class="stat-valor">{{ clasificacion.partidosEmpatados }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">PP</span>
+              <span class="stat-valor">{{ clasificacion.partidosPerdidos }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">GF</span>
+              <span class="stat-valor">{{ clasificacion.golesFavor }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">GC</span>
+              <span class="stat-valor">{{ clasificacion.golesContra }}</span>
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (partidos.length > 0) {
+        <div class="seccion">
+          <h2>PRÓXIMOS PARTIDOS</h2>
+          @for (partido of partidos; track partido.id) {
+            <div class="partido-card">
+              <div class="equipo-local">
+                <span class="equipo-nombre">{{ partido.equipoLocal.nombre }}</span>
+                <img [src]="partido.equipoLocal.escudo" class="escudo" [alt]="partido.equipoLocal.nombre"/>
+              </div>
+              <div class="marcador">
+                <span class="hora">{{ partido.fecha | date:'HH:mm' }}</span>
+                <span class="fecha">{{ partido.fecha | date:'EEE d MMM' : '' : 'es' }}</span>
+              </div>
+              <div class="equipo-visitante">
+                <img [src]="partido.equipoVisitante.escudo" class="escudo" [alt]="partido.equipoVisitante.nombre"/>
+                <span class="equipo-nombre">{{ partido.equipoVisitante.nombre }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    }
+
+  </main>
+</div>
