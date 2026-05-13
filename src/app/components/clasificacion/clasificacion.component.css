@@ -15,6 +15,12 @@
   font-size: 18px;
 }
 
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
 .season {
   font-size: 14px;
   color: #94a3b8;
@@ -60,7 +66,18 @@ h1 {
 }
 
 .col-pos { text-align: center; }
-.col-equipo { display: flex; align-items: center; gap: 10px; }
+
+.col-equipo {
+  display: flex;
+  align-items: center;
+}
+
+.col-equipo-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .col-stat { text-align: center; color: #94a3b8; font-size: 14px; }
 .col-pts { text-align: center; color: #ef4444; font-weight: bold; font-size: 15px; }
 
@@ -70,7 +87,7 @@ h1 {
   object-fit: contain;
 }
 
-.champions { border-left: 4px solid  #3b82f6; }
+.champions { border-left: 4px solid #3b82f6; }
 .europa { border-left: 4px solid #fc5000; }
 .conference { border-left: 4px solid #0bf803; }
 .descenso { border-left: 4px solid #ef4444; }
@@ -92,83 +109,25 @@ h1 {
   margin-right: 6px;
 }
 
-.champions-dot { background: #3b82f6;; }
+.champions-dot { background: #3b82f6; }
 .europa-dot { background: #fc5000; }
 .conference-dot { background: #0bf803; }
 .descenso-dot { background: #ef4444; }
 
-.logo-img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-}
-
-/* MOVILES */
 @media (max-width: 768px) {
-  .container {
-    padding: 16px;
-  }
-
-  .header {
-    padding: 12px 16px;
-  }
-
-  .logo-text {
-    display: none;
-  }
-
-  .season {
-    display: none;
-  }
-
-  nav a {
-    margin: 0 8px;
-    font-size: 13px;
-  }
+  .container { padding: 16px; }
+  .header { padding: 12px 16px; }
+  .logo-text { display: none; }
+  .season { display: none; }
+  nav a { margin: 0 8px; font-size: 13px; }
 
   .fila {
-    grid-template-columns: 35px 1fr 40px 40px 40px 40px 40px 40px 50px 50px;
+    grid-template-columns: 30px 1fr 40px 40px 40px 40px 50px;
     padding: 10px 8px;
     font-size: 12px;
   }
 
-  .escudo {
-    width: 18px;
-    height: 18px;
-  }
-
-  .equipo-nombre {
-    font-size: 12px;
-  }
-
-  .col-stat {
-    font-size: 12px;
-  }
-
-  .col-pts {
-    font-size: 13px;
-  }
-
-  .leyenda {
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .fila {
-    grid-template-columns: 28px 1fr 32px 32px 32px 32px 32px 32px 40px 40px;
-    padding: 8px 6px;
-    font-size: 11px;
-  }
-
-  .col-equipo {
-    gap: 6px;
-  }
-
-  .escudo {
-    width: 16px;
-    height: 16px;
-  }
+  .col-hide { display: none; }
+  .leyenda { flex-wrap: wrap; gap: 12px; font-size: 12px; }
+  .escudo { width: 18px; height: 18px; }
 }

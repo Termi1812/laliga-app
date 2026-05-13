@@ -25,9 +25,9 @@
         <span class="col-stat">PG</span>
         <span class="col-stat">PE</span>
         <span class="col-stat">PP</span>
-        <span class="col-stat">GF</span>
-        <span class="col-stat">GC</span>
-        <span class="col-stat">DG</span>
+        <span class="col-stat col-hide">GF</span>
+        <span class="col-stat col-hide">GC</span>
+        <span class="col-stat col-hide">DG</span>
         <span class="col-pts">PTS</span>
       </div>
 
@@ -35,16 +35,18 @@
         <div class="fila" [ngClass]="getClaseCompeticion(item.posicion)">
           <span class="col-pos">{{ item.posicion }}</span>
           <span class="col-equipo">
-            <img [src]="item.equipo.escudo" class="escudo" [alt]="item.equipo.nombre"/>
-            {{ item.equipo.nombre }}
+            <div class="col-equipo-inner">
+              <img [src]="item.equipo.escudo" class="escudo" [alt]="item.equipo.nombre"/>
+              {{ item.equipo.nombre }}
+            </div>
           </span>
           <span class="col-stat">{{ item.partidosJugados }}</span>
           <span class="col-stat">{{ item.partidosGanados }}</span>
           <span class="col-stat">{{ item.partidosEmpatados }}</span>
           <span class="col-stat">{{ item.partidosPerdidos }}</span>
-          <span class="col-stat">{{ item.golesFavor }}</span>
-          <span class="col-stat">{{ item.golesContra }}</span>
-          <span class="col-stat">{{ item.diferenciaGoles }}</span>
+          <span class="col-stat col-hide">{{ item.golesFavor }}</span>
+          <span class="col-stat col-hide">{{ item.golesContra }}</span>
+          <span class="col-stat col-hide">{{ item.diferenciaGoles }}</span>
           <span class="col-pts">{{ item.puntos }}</span>
         </div>
       }
