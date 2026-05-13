@@ -33,7 +33,7 @@ export class EquipoDetalleComponent implements OnInit {
       next: (data) => { this.clasificacion = data; this.cdr.detectChanges(); }
     });
 
-    this.apiService.getPartidosEquipo(id).subscribe({
+    this.apiService.getPartidosProximos(id).subscribe({
       next: (data) => { this.partidos = data; this.cdr.detectChanges(); }
     });
   }

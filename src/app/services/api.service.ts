@@ -34,4 +34,7 @@ export class ApiService {
   getPartidosEquipo(id: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/partidos/equipo/${id}`);
   }
+  getPartidosProximos(id: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/partidos/equipo/${id}/proximos`);
+  }
 }
