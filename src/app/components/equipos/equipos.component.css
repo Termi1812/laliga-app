@@ -79,6 +79,81 @@ h1 {
   color: #94a3b8;
   text-align: center;
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.equipo-card {
+  animation: fadeInUp 0.3s ease forwards;
+  opacity: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.equipo-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.equipo-card:hover::before {
+  opacity: 1;
+}
+
+.equipo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-color: #ef4444;
+}
+
+.equipo-card:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: none;
+}
+
+.equipo-card .escudo {
+  transition: transform 0.3s ease;
+}
+
+.equipo-card:hover .escudo {
+  transform: scale(1.2);
+}
+
+.equipo-card:nth-child(1)  { animation-delay: 0.03s; }
+.equipo-card:nth-child(2)  { animation-delay: 0.06s; }
+.equipo-card:nth-child(3)  { animation-delay: 0.09s; }
+.equipo-card:nth-child(4)  { animation-delay: 0.12s; }
+.equipo-card:nth-child(5)  { animation-delay: 0.15s; }
+.equipo-card:nth-child(6)  { animation-delay: 0.18s; }
+.equipo-card:nth-child(7)  { animation-delay: 0.21s; }
+.equipo-card:nth-child(8)  { animation-delay: 0.24s; }
+.equipo-card:nth-child(9)  { animation-delay: 0.27s; }
+.equipo-card:nth-child(10) { animation-delay: 0.30s; }
+.equipo-card:nth-child(11) { animation-delay: 0.33s; }
+.equipo-card:nth-child(12) { animation-delay: 0.36s; }
+.equipo-card:nth-child(13) { animation-delay: 0.39s; }
+.equipo-card:nth-child(14) { animation-delay: 0.42s; }
+.equipo-card:nth-child(15) { animation-delay: 0.45s; }
+.equipo-card:nth-child(16) { animation-delay: 0.48s; }
+.equipo-card:nth-child(17) { animation-delay: 0.51s; }
+.equipo-card:nth-child(18) { animation-delay: 0.54s; }
+.equipo-card:nth-child(19) { animation-delay: 0.57s; }
+.equipo-card:nth-child(20) { animation-delay: 0.60s; }
 
 @media (max-width: 768px) {
   .container { padding: 16px; }

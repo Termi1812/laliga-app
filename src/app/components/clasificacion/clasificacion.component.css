@@ -51,6 +51,8 @@ h1 {
   align-items: center;
   border-bottom: 1px solid #1e293b;
   border-left: 4px solid transparent;
+  animation: fadeInUp 0.3s ease forwards;
+  opacity: 0;
 }
 
 .fila:hover {
@@ -63,6 +65,8 @@ h1 {
   color: #94a3b8;
   font-size: 13px;
   border-left: 4px solid transparent;
+  animation: none;
+  opacity: 1;
 }
 
 .col-pos { text-align: center; }
@@ -114,19 +118,49 @@ h1 {
 .conference-dot { background: #0bf803; }
 .descenso-dot { background: #ef4444; }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fila:nth-child(2) { animation-delay: 0.05s; }
+.fila:nth-child(3) { animation-delay: 0.10s; }
+.fila:nth-child(4) { animation-delay: 0.15s; }
+.fila:nth-child(5) { animation-delay: 0.20s; }
+.fila:nth-child(6) { animation-delay: 0.25s; }
+.fila:nth-child(7) { animation-delay: 0.30s; }
+.fila:nth-child(8) { animation-delay: 0.35s; }
+.fila:nth-child(9) { animation-delay: 0.40s; }
+.fila:nth-child(10) { animation-delay: 0.45s; }
+.fila:nth-child(11) { animation-delay: 0.50s; }
+.fila:nth-child(12) { animation-delay: 0.55s; }
+.fila:nth-child(13) { animation-delay: 0.60s; }
+.fila:nth-child(14) { animation-delay: 0.65s; }
+.fila:nth-child(15) { animation-delay: 0.70s; }
+.fila:nth-child(16) { animation-delay: 0.75s; }
+.fila:nth-child(17) { animation-delay: 0.80s; }
+.fila:nth-child(18) { animation-delay: 0.85s; }
+.fila:nth-child(19) { animation-delay: 0.90s; }
+.fila:nth-child(20) { animation-delay: 0.95s; }
+.fila:nth-child(21) { animation-delay: 1.00s; }
+
 @media (max-width: 768px) {
   .container { padding: 16px; }
   .header { padding: 12px 16px; }
   .logo-text { display: none; }
   .season { display: none; }
   nav a { margin: 0 8px; font-size: 13px; }
-
   .fila {
     grid-template-columns: 30px 1fr 40px 40px 40px 40px 50px;
     padding: 10px 8px;
     font-size: 12px;
   }
-
   .col-hide { display: none; }
   .leyenda { flex-wrap: wrap; gap: 12px; font-size: 12px; }
   .escudo { width: 18px; height: 18px; }
