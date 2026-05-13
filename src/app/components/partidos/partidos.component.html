@@ -3,22 +3,26 @@
   <header class="header">
     <div class="logo">
       <img src="logos/laliga.png" class="logo-img"/>
-      <span class="logo-text">LaLiga App</span>
+      <span class="logo-text">{{ textos.header.logo }}</span>
     </div>
     <nav>
-      <a routerLink="/clasificacion">Clasificación</a>
-      <a class="active">Partidos</a>
-      <a routerLink="/equipos">Equipos</a>
+      <a routerLink="/clasificacion">{{ textos.nav.clasificacion }}</a>
+      <a class="active">{{ textos.nav.partidos }}</a>
+      <a routerLink="/equipos">{{ textos.nav.equipos }}</a>
     </nav>
-    <div class="season">🏆 Temporada 2025/26</div>
+    <div class="season">🏆 {{ textos.header.temporada }}</div>
   </header>
 
   <main class="container">
-    <h1>PARTIDOS</h1>
+    <h1>{{ textos.partidos.titulo }}</h1>
 
     <div class="tabs">
-      <div class="tab" [class.active]="vistaActiva === 'proximos'" (click)="vistaActiva = 'proximos'">Próximos</div>
-      <div class="tab" [class.active]="vistaActiva === 'resultados'" (click)="vistaActiva = 'resultados'">Resultados</div>
+      <div class="tab" [class.active]="vistaActiva === 'proximos'" (click)="vistaActiva = 'proximos'">
+        {{ textos.partidos.proximos }}
+      </div>
+      <div class="tab" [class.active]="vistaActiva === 'resultados'" (click)="vistaActiva = 'resultados'">
+        {{ textos.partidos.resultados }}
+      </div>
     </div>
 
     @if (vistaActiva === 'proximos') {
@@ -53,7 +57,7 @@
               <span class="score-separador">-</span>
               <span class="score">{{ partido.golesVisitante }}</span>
             </div>
-            <span class="badge-fin">FIN</span>
+            <span class="badge-fin">{{ textos.partidos.fin }}</span>
           </div>
           <div class="equipo-visitante">
             <img [src]="partido.equipoVisitante.escudo" class="escudo" [alt]="partido.equipoVisitante.nombre"/>

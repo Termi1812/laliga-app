@@ -3,21 +3,20 @@
   <header class="header">
     <div class="logo">
       <img src="logos/laliga.png" class="logo-img"/>
-      <span class="logo-text">LaLiga App</span>
+      <span class="logo-text">{{ textos.header.logo }}</span>
     </div>
     <nav>
-      <a class="active">Clasificación</a>
-      <a routerLink="/partidos">Partidos</a>
-      <a routerLink="/equipos">Equipos</a>
+      <a class="active">{{ textos.nav.clasificacion }}</a>
+      <a routerLink="/partidos">{{ textos.nav.partidos }}</a>
+      <a routerLink="/equipos">{{ textos.nav.equipos }}</a>
     </nav>
-    <div class="season">🏆 Temporada {{ temporadaActual }}</div>
+    <div class="season">🏆 {{ textos.header.temporada }}</div>
   </header>
 
   <main class="container">
-    <h1>CLASIFICACIÓN</h1>
+    <h1>{{ textos.clasificacion.titulo }}</h1>
 
     <div class="tabla">
-
       <div class="fila header-fila">
         <span class="col-pos">POS</span>
         <span class="col-equipo">EQUIPO</span>
@@ -53,10 +52,10 @@
     </div>
 
     <div class="leyenda">
-      <span><span class="dot champions-dot"></span> Champions League</span>
-      <span><span class="dot europa-dot"></span> Europa League</span>
-      <span><span class="dot conference-dot"></span> Conference League</span>
-      <span><span class="dot descenso-dot"></span> Descenso</span>
+      <span><span class="dot champions-dot"></span> {{ textos.clasificacion.leyenda.champions }}</span>
+      <span><span class="dot europa-dot"></span> {{ textos.clasificacion.leyenda.europa }}</span>
+      <span><span class="dot conference-dot"></span> {{ textos.clasificacion.leyenda.conference }}</span>
+      <span><span class="dot descenso-dot"></span> {{ textos.clasificacion.leyenda.descenso }}</span>
     </div>
 
   </main>

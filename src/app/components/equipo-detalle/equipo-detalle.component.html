@@ -1,21 +1,22 @@
 <div class="app">
+
   <header class="header">
     <div class="logo">
       <img src="logos/laliga.png" class="logo-img"/>
-      <span class="logo-text">LaLiga App</span>
+      <span class="logo-text">{{ textos.header.logo }}</span>
     </div>
     <nav>
-      <a routerLink="/clasificacion">Clasificación</a>
-      <a routerLink="/partidos">Partidos</a>
-      <a routerLink="/equipos" class="active">Equipos</a>
+      <a routerLink="/clasificacion">{{ textos.nav.clasificacion }}</a>
+      <a routerLink="/partidos">{{ textos.nav.partidos }}</a>
+      <a routerLink="/equipos" class="active">{{ textos.nav.equipos }}</a>
     </nav>
-    <div class="season">🏆 Temporada 2025/26</div>
+    <div class="season">🏆 {{ textos.header.temporada }}</div>
   </header>
 
   <main class="container">
 
     @if (equipo) {
-      <div class="back" routerLink="/equipos">← Volver</div>
+      <div class="back" routerLink="/equipos">← {{ textos.equipos.volver }}</div>
 
       <div class="equipo-header">
         <img [src]="equipo.escudo" class="escudo-grande" [alt]="equipo.nombre"/>
@@ -27,14 +28,14 @@
 
       @if (clasificacion) {
         <div class="seccion">
-          <h2>CLASIFICACIÓN</h2>
+          <h2>{{ textos.equipos.detalle.clasificacion }}</h2>
           <div class="stats-grid">
             <div class="stat-card">
-              <span class="stat-label">Posición</span>
+              <span class="stat-label">{{ textos.equipos.detalle.posicion }}</span>
               <span class="stat-valor">{{ clasificacion.posicion }}º</span>
             </div>
             <div class="stat-card">
-              <span class="stat-label">Puntos</span>
+              <span class="stat-label">{{ textos.equipos.detalle.puntos }}</span>
               <span class="stat-valor rojo">{{ clasificacion.puntos }}</span>
             </div>
             <div class="stat-card">
@@ -67,7 +68,7 @@
 
       @if (partidos.length > 0) {
         <div class="seccion">
-          <h2>PRÓXIMOS PARTIDOS</h2>
+          <h2>{{ textos.equipos.detalle.proximosPartidos }}</h2>
           @for (partido of partidos; track partido.id) {
             <div class="partido-card">
               <div class="equipo-local">

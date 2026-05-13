@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
+import { TEXTOS } from '../../constants/textos';
 
 @Component({
   selector: 'app-clasificacion',
@@ -14,6 +15,7 @@ export class ClasificacionComponent implements OnInit {
 
   clasificacion: any[] = [];
   temporadaActual: any = null;
+  textos = TEXTOS;
 
   constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
 

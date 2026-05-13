@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
+import { TEXTOS } from '../../constants/textos';
 
 @Component({
   selector: 'app-equipos',
@@ -13,6 +14,7 @@ import { ApiService } from '../../services/api.service';
 export class EquiposComponent implements OnInit {
 
   equipos: any[] = [];
+  textos = TEXTOS;
 
   constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
 

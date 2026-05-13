@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
+import { TEXTOS } from '../../constants/textos';
 
 @Component({
   selector: 'app-equipo-detalle',
@@ -15,7 +16,7 @@ export class EquipoDetalleComponent implements OnInit {
   equipo: any = null;
   clasificacion: any = null;
   partidos: any[] = [];
-
+  textos = TEXTOS;
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
