@@ -13,6 +13,7 @@ import { ApiService } from '../../services/api.service';
 export class ClasificacionComponent implements OnInit {
 
   clasificacion: any[] = [];
+  temporadaActual: any = null;
 
   constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
 
@@ -24,6 +25,13 @@ export class ClasificacionComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error:', err);
+      }
+    });
+    this.apiService.getTemporadaActual().subscribe({
+      next: (data) => {
+        this.temporadaActual = data;
+        this.cdr.detectChanges();
+        console.log('Temporada actual:', data);
       }
     });
   }
