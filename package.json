@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
   "ng": "ng",
-  "start": "npx serve dist/laliga-app/browser --listen tcp://0.0.0.0:$PORT --single",
+  "start": "npx serve browser --listen tcp://0.0.0.0:$PORT --single",
   "serve:local": "node server.js",
   "build": "ng build",
   "watch": "ng build --watch --configuration development",
