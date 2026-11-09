@@ -2,7 +2,7 @@
   "name": "laliga-app",
   "compatibility_date": "2026-11-01",
   "assets": {
-    "directory": "./browser",
+    "directory": "./browser/browser",
     "not_found_handling": "single-page-application"
   }
 }
